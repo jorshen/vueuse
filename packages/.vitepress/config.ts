@@ -8,12 +8,12 @@ import { transformHead } from './transformHead'
 import viteConfig from './vite.config'
 
 const Guide = [
-  { text: 'Get Started', link: '/guide/' },
-  { text: 'Best Practice', link: '/guide/best-practice' },
-  { text: 'Configurations', link: '/guide/config' },
-  { text: 'Components', link: '/guide/components' },
-  { text: 'Contributing', link: '/contributing' },
-  { text: 'Guidelines', link: '/guidelines' },
+  { text: '开始使用', link: '/guide/' },
+  { text: '最佳实践', link: '/guide/best-practice' },
+  { text: '配置', link: '/guide/config' },
+  { text: '组件', link: '/guide/components' },
+  { text: '贡献', link: '/contributing' },
+  { text: '准则', link: '/guidelines' },
 ]
 
 const CoreCategories = coreCategoryNames.map(c => ({
@@ -32,32 +32,32 @@ const AddonCategories = [
 ]
 
 const Links = [
-  { text: 'Add-ons', link: '/add-ons' },
-  { text: 'Ecosystem', link: '/ecosystem' },
-  { text: 'Export Size', link: '/export-size' },
-  { text: 'Recent Updated', link: '/functions.html#sort=updated' },
-  { text: 'Why no translations?', link: '/why-no-translations' },
+  { text: '插件', link: '/add-ons' },
+  { text: '生态系统', link: '/ecosystem' },
+  { text: '导出大小', link: '/export-size' },
+  { text: '最近更新', link: '/functions.html#sort=updated' },
+  { text: '为什么没有翻译?', link: '/why-no-translations' },
 ]
 
 const Learn = [
-  { text: 'Premium Video Course', link: 'https://vueschool.io/courses/vueuse-for-everyone?friend=vueuse' },
-  { text: 'Official Vue Certification', link: 'https://certification.vuejs.org/?utm_source=vueuse&utm_medium=website&utm_campaign=affiliate&utm_content=guide&banner_type=text&friend=VUEUSE' },
+  { text: '高级视频课程', link: 'https://vueschool.io/courses/vueuse-for-everyone?friend=vueuse' },
+  { text: '官方Vue认证', link: 'https://certification.vuejs.org/?utm_source=vueuse&utm_medium=website&utm_campaign=affiliate&utm_content=guide&banner_type=text&friend=VUEUSE' },
 ]
 
 const DefaultSideBar = [
-  { text: 'Guide', items: Guide },
-  { text: 'Core Functions', items: CoreCategories },
-  { text: 'Add-ons', items: AddonCategories },
-  { text: 'Learn', items: Learn },
-  { text: 'Links', items: Links },
+  { text: '指南', items: Guide },
+  { text: '核心功能', items: CoreCategories },
+  { text: '插件', items: AddonCategories },
+  { text: '学习', items: Learn },
+  { text: '链接', items: Links },
 ]
 
 const FunctionsSideBar = getFunctionsSideBar()
 
 export default withPwa(defineConfig({
-  title: 'VueUse',
-  description: 'Collection of essential Vue Composition Utilities',
-  lang: 'en-US',
+  title: 'VueUse中文文档',
+  description: 'Vue 必备的组合式工具集',
+  lang: 'zh-CN',
   ignoreDeadLinks: true,
 
   markdown: {
@@ -96,15 +96,15 @@ export default withPwa(defineConfig({
 
     nav: [
       {
-        text: 'Guide',
+        text: '使用指南',
         items: [
-          { text: 'Guide', items: Guide },
-          { text: 'Learn', items: Learn },
-          { text: 'Links', items: Links },
+          { text: '使用指南', items: Guide },
+          { text: '学习', items: Learn },
+          { text: '链接', items: Links },
         ],
       },
       {
-        text: 'Functions',
+        text: '函数',
         items: [
           {
             text: '',
@@ -118,26 +118,30 @@ export default withPwa(defineConfig({
         ],
       },
       {
-        text: 'Add-ons',
+        text: '插件',
         link: '/add-ons',
       },
       {
-        text: 'Playground',
+        text: '演练场',
         link: 'https://play.vueuse.org',
+      },
+      {
+        text: 'VueUse官网',
+        link: 'https://vueuse.org',
       },
       {
         text: currentVersion,
         items: [
           {
             items: [
-              { text: 'Release Notes', link: 'https://github.com/vueuse/vueuse/releases' },
+              { text: '更新日志', link: 'https://github.com/vueuse/vueuse/releases' },
             ],
           },
           {
-            text: 'Versions',
+            text: '版本列表',
             items: versions.map(i => i.version === currentVersion
               ? {
-                  text: `${i.version} (Current)`,
+                  text: `${i.version} (当前)`,
                   activeMatch: '/', // always active
                   link: '/',
                 }
